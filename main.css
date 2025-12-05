@@ -1,5 +1,82 @@
-* {
+body {
   font-family: Poppins, sans-serif;
+}
+
+/* console */
+.terminal {
+  --green: #adff2f;
+  --green-dark: #84dc00;
+  --blue: #499bff;
+  --blue-dark: #2788ff;
+  --main-color: var(--blue);
+  --main-color-alt: var(--blue-dark);
+  margin: 50px auto;
+  width: 60%;
+  min-height: 200px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  font-family: consolas, monospace;
+}
+
+.terminal .head {
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--main-color);
+  background-color: rgb(55, 55, 55);
+  padding: 15px 20px;
+}
+
+.terminal .head::selection {
+  color: white;
+  background-color: var(--main-color-alt);
+}
+
+.terminal .body {
+  padding: 20px;
+  background-color: rgb(44, 44, 44);
+  color: aliceblue;
+  font-size: 22px;
+  flex: 1;
+  line-height: 1.6;
+  white-space: pre;
+}
+
+.terminal .body::selection {
+  color: black;
+  background-color: white;
+}
+
+.terminal .body p {
+  margin: 0;
+}
+
+.terminal .body p::before {
+  content: "> ";
+  color: var(--main-color);
+}
+
+.terminal button {
+  position: absolute;
+  right: 20px;
+  bottom: 15px;
+  border: 2px var(--main-color) solid;
+  color: var(--main-color);
+  background-color: rgb(44, 44, 44);
+  font-size: 20px;
+  font-family: consolas, "Courier New", Courier, monospace;
+  padding: 7px 15px;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: 0.3s;
+  user-select: none;
+}
+
+.terminal button:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.2);
 }
 
 h1 {

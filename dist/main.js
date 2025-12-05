@@ -1,12 +1,22 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var x;
-(function (x) {
-    x[x["single"] = 1] = "single";
-    x[x["taken"] = 3] = "taken";
-    x[x["married"] = 2] = "married";
-    x[x["divorced"] = 3] = "divorced";
-    x[x["widowed"] = 4] = "widowed";
-})(x || (x = {}));
-console.log();
+/* console */
+let terminal = document.querySelector(".terminal .body");
+if (terminal) {
+    let print = function (...stuff) {
+        stuff.forEach((thing) => {
+            let line = document.createElement("p");
+            line.textContent = `${thing}`;
+            terminal.appendChild(line);
+        });
+    };
+    let init = function () {
+        terminal.textContent = "";
+        let clr_btn = document.querySelector(".terminal button");
+        if (clr_btn)
+            clr_btn.addEventListener("click", () => (terminal.textContent = ""));
+    };
+    init();
+    print("Hello world");
+    print([1, 2, 3, 4]);
+}
+export {};
 //# sourceMappingURL=main.js.map
